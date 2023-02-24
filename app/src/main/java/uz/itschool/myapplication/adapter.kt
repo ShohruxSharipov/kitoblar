@@ -1,5 +1,6 @@
 package uz.itschool.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +15,9 @@ class adapter(context:Context,var books:MutableList<books>) : ArrayAdapter<books
         return books.size
     }
 
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val book = books.get(position)
-        var binding:BookBinding
 
         var itembok = BookBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         itembok.name.text = book.name

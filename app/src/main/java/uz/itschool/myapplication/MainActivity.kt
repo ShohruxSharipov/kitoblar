@@ -7,7 +7,7 @@ import uz.itschool.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    lateinit var list:ArrayList<books>
+    var list = ArrayList<books>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         var adapter = adapter(this,BOOKS())
         binding.listView.adapter = adapter
     }
+
+
     fun BOOKS():ArrayList<books>{
         list.add(books("kitob","avtr",R.drawable.img))
         return list
