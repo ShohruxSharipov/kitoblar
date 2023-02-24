@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         var adapter = adapter(this,BOOKS())
         binding.listView.adapter = adapter
-
-
-
-
     }
     fun BOOKS():ArrayList<books>{
         list.add(books("kitob","avtr",R.drawable.img))
