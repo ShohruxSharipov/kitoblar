@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import coil.load
 import uz.itschool.myapplication.databinding.ActivityMainBinding
 import uz.itschool.myapplication.databinding.BookBinding
 
@@ -22,7 +23,10 @@ class adapter(context:Context,var books:MutableList<books>) : ArrayAdapter<books
         var itembok = BookBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         itembok.name.text = book.name
         itembok.aftor.text = book.author
-        itembok.imageView.setImageResource(book.photo)
+        itembok.imageView.load(book.photo){
+            placeholder(R.drawable.img_1)
+            error(R.drawable.img_1)
+        }
         return itembok.root
     }
 
